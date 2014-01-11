@@ -53,13 +53,13 @@ int main () {
     pid = fork();
 
     if (pid == (pid_t) 0) {
-        /* macieszysty */
+        /* potomny */
         close(fd[1]);
         dup2(fd[0], STDIN_FILENO);
         close(fd[0]);
         execlp("sort", "sort", 0);
     } else if (pid > 0) {
-        /* potomek */
+        /* macierzysty */
         sendmail();
         FILE * strumien;
         close(fd[0]);
