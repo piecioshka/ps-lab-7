@@ -13,7 +13,7 @@ zad3:
 	${CC} ${CFLAGS} ${SRC}$@/main.c -o ${TARGET}$@/main.o
 
 zad4:
-	#${CC} ${CFLAGS} ${SRC}$@/shell.c -o ${TARGET}$@/shell.o
+	${CC} ${CFLAGS} ${SRC}$@/main.c -o ${TARGET}$@/main.o
 
 zad5:
 	#${CC} ${CFLAGS} ${SRC}$@/raise.c -o ${TARGET}$@/raise.o

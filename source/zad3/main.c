@@ -12,17 +12,16 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h> /* PIPE_BUF */
+#include <ctype.h>
 
 const int READ = 0;
 const int WRITE = 1;
 
+#define MESSAGE "klawiatura"
+
 void toUpper(char *text, char *nText){
-    for(int i = 0; i <= strlen(text); i++){
-        if ((text[i] > 96 ) && (text[i] < 123) ) {
-            nText[i] = text[i] - 'a' + 'A';
-        } else {
-            nText[i] = text[i];
-        }
+    for (int i = 0; i <= strlen(text); i++){
+        nText[i] = toupper(text[i]);
     }
 }
 
@@ -63,7 +62,7 @@ int main(int argc, char * argv[]) {
     } else if (childpid > 0) {
         /* macierzysty */
         char sended[PIPE_BUF];
-        sprintf(sended, "jestem boski");
+        sprintf(sended, MESSAGE);
         printf(" >>> wysylamy: %s\n", sended);
 
         printf("[#] piszemy do potok[WRITE]\n");

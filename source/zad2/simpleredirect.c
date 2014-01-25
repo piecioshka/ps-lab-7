@@ -76,7 +76,7 @@ int main(int argc, char * argv[]) {
          shellcmd(first);
          /* perror("Failed to exec ls"); */
       }
-      return 1; 
+      return 1;
    }
    if (dup2(fd[0], STDIN_FILENO) == -1) {
        /* sort is the parent */
